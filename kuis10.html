@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Covid-19</title>
+
+	<!-- Bootsrap 4.5 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+	<!-- Icon Bootsrap 4/font-awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- CSS Internal -->
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+
+		}
+
+		body{
+			background: url(https://i0.wp.com/news.northeastern.edu/wp-content/uploads/2021/12/covid_1400.jpg?fit=1400%2C933&ssl=1) no-repeat;
+			background-size: cover;
+		}
+
+		.kotak{
+			width: 1110px;
+			height: 100%;
+			border: 2px solid grey;
+			background-color: #e3a130;
+			margin: 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+			border-radius: 10px;
+			box-shadow:5px 0 30px #fff;  
+		}
+
+		span{
+			display: inline-block;
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.section-head{
+			margin-bottom: 60px;
+		}
+
+		.section-head h4{
+			position: relative;
+			padding: 0;
+			color: orange;
+			line-height: 1;
+			letter-spacing: 0.3px;
+			font-size: 34px;
+			text-align: center;
+			text-transform: none;
+			margin-bottom: 30px;
+		}
+
+		.section-head h4:before{
+			content:' ';
+			width: 300px;
+			height: 3px;
+			background: red;
+			position: absolute;
+			bottom: -10px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+
+		.section-head h4 span{
+			font-weight: 700;
+			padding-bottom: 5px;
+			color: #fff;
+		}
+
+		.item{
+			background: #29b32e;
+			text-align: center;
+			padding: 30px 25px;
+			border-radius: 10px;
+			margin-top: 23px; 
+			margin-bottom: 30px;
+			align-self: normal;
+			border: 5px solid rgba(0, 0, 0, 0.07);
+			-webkit-transition: all 0.05s ease 0s;
+			transition: all 0.05s ease 0s;
+			box-shadow: 1px 1px 1px #999,
+			4px 7px 0px #fff,
+			3px 7px 0px #fff,
+			4px 3px 0px #fff,
+			5px 5px 0px #fff,
+			10px 6px 0px #fff;
+		}
+
+		.item:hover{
+			background: #4b73c4;
+			box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+			-webkit-transition: all 0.05s ease 0s;
+			transition: all 0.5s ease 0s
+		}
+
+		.item:hover .item,
+		.itemh:hover span.icon{
+			background: #fff;
+			border-radius: 10px;
+			-webkit-transition: all 0.05s ease 0s;
+			transition: all 0.05s ease 0s;
+		}
+
+		.item:hover h6, 
+		.item:hover p{
+			color: #fff;
+			-webkit-transition: all 05s ease 0s;
+			transition: all 0.5s ease 0s;
+		}
+
+		.item .icon{
+			font-size: 40px;
+			margin-bottom: 25px;
+			color: #bec6d4;
+			width: 90px;
+			height: 90px;
+			line-height: 88px;
+			border-radius: 50px;
+		}
+
+		.item .feature_box_col_one{
+			background: #f08718;
+			color: #fff;
+		}
+
+		.item .feature_box_col_two{
+			background: #f08718;
+			color: #fff;
+		}
+
+		.item .feature_box_col_three{
+			background: #f08718;
+			color: #fff;
+		}
+
+		.item .feature_box_col_four{
+			background: #f08718;
+			color: #fff;
+		}
+
+
+		.item p{
+			font-size: 23px;
+			font-weight: bold;
+			margin-top: auto;
+			display: list-item;
+			list-style-position: inside;
+			
+		}
+
+		.item h6{
+			font-size: 25px;
+			font-weight: bold; 
+			line-height: 20px;
+			margin-bottom: 20px;
+			color: #2f2f2f;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="pt-5 pb-5">
+		<div class="container">
+			<div class="row">
+				<div class="section-head col-sm-12">
+					<h4><span>COVID-19</span> TRACKER</h4><br>
+					<div class="input-group">
+						<input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+						<button type="button" class="btn btn-primary mx-2">Search</button>
+					</div>
+				</div>
+				<div class="kotak">
+					<div class="col-lg-3 col-sm-4">
+						<div class="item"><span class="icon feature_box_col_one"><i class="fa fa-exclamation"></i></span>
+							<h6>Active Cases</h6>
+							<p class="active-case"></p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-sm-4">
+						<div class="item"><span class="icon feature_box_col_two"><i class="fa fa-ambulance"></i></span>
+							<h6>Kasus Kritis</h6>
+							<p class="critical-case"></p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-sm-4">
+						<div class="item"><span class="icon feature_box_col_three"><i class="fa fa-check-square"></i></span>
+							<h6>Kasus Baru</h6>
+							<p class="new-case"></p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-sm-4">
+						<div class="item"><span class="icon feature_box_col_four"><i class="fa fa-stethoscope"></i></span>
+							<h6>Sembuh</h6>
+							<p class="recovered"></p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- core Jquery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+	<!--Npm Bootsrap-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<!-- Sweetalert -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.33/dist/sweetalert2.all.min.js"></script>
+
+	<script src="kuis10.js"></script>
+</body>
+</html>
